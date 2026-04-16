@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IStudent } from '../model/student';
 
 @Component({
@@ -7,42 +7,99 @@ import { IStudent } from '../model/student';
   styleUrls: ['./studentcrud.component.scss']
 })
 export class StudentcrudComponent implements OnInit {
+  isInEditMode: boolean = false
+  editObj!: IStudent
 
+  @ViewChild('studentname') studentname!: ElementRef
+  @ViewChild('studentage') studentage!: ElementRef
+  @ViewChild('studentcourse') studentcourse!: ElementRef
+
+  students: IStudent[] = [];
   constructor() { }
-
   ngOnInit(): void {
   }
 
-  studentsArr:Array<IStudent> = [
-  { 
-    name: "Shiv",
-     id: "ST101", 
-    age: 23,
-     course: "BCA"
-   },
-  { 
-    name: "Rohit", 
-    id: "ST102", 
-    age: 23, 
-    course: "BBA" 
-  },
-  { 
-    name: "Arjun", 
-    id: "ST103", 
-    age: 26, 
-    course: "BSc"
-   },
-  {
-     name: "DS", 
-    id: "ST104",
-     age: 22, 
-    course: "MCA"
-   },
-  { 
-    name: "Gaju",
-     id: "ST105",
-     age: 26, 
-    course: "BTech"
-   }
-];
+  studentsArr: Array<IStudent> = [
+    {
+      name: "Shiv",
+      age: "23",
+      course: "BCA",
+      id: "21"
+    },
+    {
+      name: "Rohit",
+      age: "23",
+      course: "BBA",
+      id: "22"
+    },
+    {
+      name: "Arjun",
+      age: "26",
+      course: "BSc",
+      id: "23"
+    },
+    {
+      name: "DS",
+      age: "22",
+      course: "MCA",
+      id: "24"
+    },
+    {
+      name: "Gaju",
+      age: "26",
+      course: "BTech",
+      id: "25"
+    }
+  ];
+  Onadd() {
+    let studentname = this.studentname.nativeElement.value;
+    let studentage = this.studentage.nativeElement.value;
+    let studentcourse = this.studentcourse.nativeElement.value;
+    let newstudent: IStudent = {
+      name: studentname,
+      age: studentage,
+      course: studentcourse,
+      id: Date.now().toString()
+    }
+    this.studentsArr.push(newstudent)
+    this.studentname.nativeElement.value = ``;
+    this.studentage.nativeElement.value = ``;
+    this.studentcourse.nativeElement.value = ``;
+  }
+  trackByStudent(index: number, item: IStudent) {
+    return item.id
+  }
+
+  OnRemove(id: string) {
+    console.log(id);
+    let getIndex = this.studentsArr.findIndex(t => t.id === id)
+    this.studentsArr.splice(getIndex, 1)
+  }
+
+  OnEdit(student: IStudent) {
+    console.log(student);
+    this.isInEditMode = true
+    this.editObj = student;
+    this.studentname.nativeElement.value = this.editObj.name
+    this.studentage.nativeElement.value = this.editObj.age
+    this.studentcourse.nativeElement.value = this.editObj.course
+  }
+
+  OnUpdate() {
+    //UPDATE_ID
+    let UPDATE_ID = this.editObj.id
+    //UPDATE_OBJ
+    let UPDATE_OBJ: IStudent = {
+      name: this.studentname.nativeElement.value,
+      age: this.studentage.nativeElement.value,
+      course: this.studentcourse.nativeElement.value,
+      id: UPDATE_ID
+    }
+    console.log(UPDATE_OBJ);
+    let getIndex = this.studentsArr.findIndex(t => t.id === UPDATE_ID)
+    this.studentsArr[getIndex] = UPDATE_OBJ
+    this.studentname.nativeElement.value = ``;
+    this.isInEditMode = false
+  }
+
 }

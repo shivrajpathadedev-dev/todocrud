@@ -13,7 +13,6 @@ editObj!:Itodo
   @ViewChild('todoControl') todoControl!: ElementRef
   constructor() { }
   ngOnInit(): void {
-
   }
   todosArr: Array<Itodo> = [
     {

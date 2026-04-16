@@ -2,7 +2,7 @@
 
 export interface IStudent {
   name: string;
-  id: string;
-  age: number;
+  age: string;
   course: string;
+  id:string;
 }
