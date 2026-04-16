@@ -39,12 +39,11 @@ editObj!:Itodo
       todoId: Date.now().toString()
     }
     this.todosArr.push(newTodo)
+    this.todoControl.nativeElement.value=``;
   }
-
   trackbyFun(index: number, item: Itodo) {
     return item.todoId
   }
-
   OnRemove(id: string) {
     console.log(id);
     let getIndex = this.todosArr.findIndex(t => t.todoId === id)
