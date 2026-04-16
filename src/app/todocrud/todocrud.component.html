@@ -1,0 +1,46 @@
+<p>todocrud works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-4 mb-md-0">
+            <div class="form-group">
+                <input
+                #todoControl
+                type="text" class="form-control">
+            </div>
+            <button
+            *ngIf="!isInEditMode"
+            (click)="OnTodoAdd(todoControl)"
+            class="btn btn-sm btn-block btn-primary">Add Todo</button>
+
+            <button
+            (click)="OnUpdate()"
+            *ngIf="isInEditMode"
+            class="btn btn-sm btn-block btn-primary">Update Todo</button>
+        </div>
+        <div class="col-md-8">
+            <ul class="list-group" *ngIf="todosArr.length >0; else noTodos">
+                <li 
+                *ngFor="let todo of todosArr"
+                class="list-group-item d-flex justify-content-between">
+                <strong>
+                    {{todo.toodItem}}
+                </strong>
+                <div>
+                    <button
+                     (click)="OnEdit(todo)"
+                     class="mr-2 btn btn-sm btn-outline-primary">Edit</button>
+                    <button
+                    (click)="OnRemove(todo.todoId)"
+                    class="mr-2 btn btn-sm btn-outline-danger">Remove</button>
+
+                </div>
+                 </li>
+            </ul>
+            <ng-template #noTodos>
+                   <p class="alert alert-info">No todos</p>
+            </ng-template>
+            
+ 
+        </div>
+    </div>
+</div>
