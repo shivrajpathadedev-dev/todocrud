@@ -8,15 +8,15 @@
                 <table class="student-table">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input #studentname type="text" class="form-control" required>
+                        <input #studentname type="text" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="name">Age</label>
-                        <input #studentage type="text" class="form-control" required>
+                        <input #studentage type="text" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="name">Course</label>
-                        <input #studentcourse type="text" class="form-control" required>
+                        <input #studentcourse type="text" class="form-control">
                     </div>
                     <div class="form-group">
                         <button (click)="Onadd()" *ngIf="!isInEditMode" class="btn btn-block btn-outline-primary">Add
@@ -49,12 +49,10 @@
                             <td>
                                 <button (click)="OnEdit(std)"
                                     class="btn btn-outline-primary btn-block btn-sm">Edit</button>
-
                             </td>
                             <td>
                                 <button (click)="OnRemove(std.id)"
                                     class="btn btn-outline-danger btn-block btn-sm">Remove</button>
-
                             </td>
                         </tr>
                     </tbody>
