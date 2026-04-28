@@ -1,0 +1,29 @@
+<!-- <p>cars works!</p> -->
+
+<!-- <p>food works!</p> -->
+
+<!-- <p>tabs works!</p> -->
+
+<div class="container mt-4">
+     <h2><strong>Cars</strong></h2>
+<ul class="nav nav-pills">
+    <li *ngFor="let tab of tabArrs" class="nav-item">
+        <a href="javascript:;" [ngClass]="{
+            active:selectedSkill.toLowerCase().includes(tab.frameWorkName)
+        }" class="nav-link"
+        (click)="onTodoChange(tab.frameWorkName)">
+        {{tab.tabTitle}}
+        </a>
+    </li>
+</ul>
+
+<div class="card mt-2">
+    <ng-container *ngFor="let tab of tabArrs">
+        <div class="card-body" 
+        [innerHTML]="tab.tabContent"
+            *ngIf="selectedSkill.toLowerCase().includes(tab.frameWorkName)">
+        </div>
+    </ng-container>
+</div>
+</div>
+

@@ -6,6 +6,17 @@ import { TodocrudComponent } from './todocrud/todocrud.component';
 import { StudentcrudComponent } from './studentcrud/studentcrud.component';
 import { ProductcrudComponent } from './productcrud/productcrud.component';
 import { PostcrudComponent } from './postcrud/postcrud.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import { TabComponent } from './tab/tab.component';
+import { TabForComponent } from './tab-for/tab-for.component';
+import { FoodComponent } from './food/food.component';
+import { CarsComponent } from './cars/cars.component';
+import { TabsComponent } from './tabs/tabs.component';
+import { NewfoodComponent } from './newfood/newfood.component';
+
 
 @NgModule({
   declarations: [
@@ -13,11 +24,20 @@ import { PostcrudComponent } from './postcrud/postcrud.component';
     TodocrudComponent,
     StudentcrudComponent,
     ProductcrudComponent,
-    PostcrudComponent
-    
+    PostcrudComponent,
+    TabComponent,
+    TabForComponent,
+    FoodComponent,
+    CarsComponent,
+    TabsComponent,
+    NewfoodComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,17 @@
 <!-- <p>studentcrud works!</p> -->
 
-<h1>Student Crud</h1>
+<!-- <h1>Student Crud</h1> -->
+
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 md-4 mb-md-0 d-flex justify-content-between align-items-center">
-            <div class="main-container">
+    <h2 class="mt-4">
+                {{isInEditMode ?'Update Student':'Add Student'}}
+            </h2>
+            <div class="col-12">
+                <div class="row">
+        
+        <div class="col-md-3 ">
+            
+            <!-- <div class="main-container"> -->
                 <table class="student-table">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -28,7 +35,7 @@
                     </div>
                 </table>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-6"> 
                 <table class="table table-bordered" *ngIf="studentsArr.length>0;else noStudent">
                     <thead>
                         <tr>
@@ -41,18 +48,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let std of studentsArr; let i=index">
+                        <tr *ngFor="let std of studentsArr; let i=index; trackBy:trackByStudent">
                             <td>{{i+1}}</td>
                             <td>{{std.name}}</td>
                             <td>{{std.age}}</td>
                             <td>{{std.course}}</td>
-                            <td>
-                                <button (click)="OnEdit(std)"
-                                    class="btn btn-outline-primary btn-block btn-sm">Edit</button>
+                            <td class="text-center">
+                                <button
+                                 (click)="OnEdit(std)" mat-mini-fab color="primary">
+                                    <mat-icon>edit</mat-icon>
+                                </button>
                             </td>
-                            <td>
-                                <button (click)="OnRemove(std.id)"
-                                    class="btn btn-outline-danger btn-block btn-sm">Remove</button>
+                            <td class="text-center">
+                                <button
+                                 (click)="OnRemove(std.id)" mat-mini-fab color="warn">
+                                    <mat-icon>delete</mat-icon>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
@@ -64,4 +75,5 @@
             </div>
         </div>
     </div>
-</div>
+            </div>
+    <!-- </div> -->

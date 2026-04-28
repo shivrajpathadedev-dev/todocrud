@@ -1,0 +1,55 @@
+<!-- <p>tab works!</p> -->
+
+<div class="container mt-4">
+     <h2><strong>Tab</strong></h2>
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a href="Javascript:;" [ngClass]="{
+        active:selectedSkill.toLowerCase().includes('html')
+    }" class="nav-link" (click)="OnTabChange('html')">HTML</a>
+        </li>
+        <li class="nav-item">
+            <a href="Javascript:;" [ngClass]="{
+        active:selectedSkill.toLowerCase().includes('css')
+    }" class="nav-link" (click)="OnTabChange('css')">CSS</a>
+        </li>
+        <li class="nav-item">
+            <a href="Javascript:;" [ngClass]="{
+        active:selectedSkill.toLowerCase().includes('javascript')
+    }" class="nav-link" (click)="OnTabChange('javascript')">Javascript</a>
+        </li>
+        <li class="nav-item">
+            <a href="Javascript:;" [ngClass]="{
+        active:selectedSkill.toLowerCase().includes('angular')
+    }" class="nav-link" (click)="OnTabChange('angular')">Angular</a>
+        </li>
+
+    </ul>
+
+    <div class="tab-content mt-2">
+        <div class="card" *ngIf="selectedSkill.toLowerCase().includes('html')">
+            <div class="card-body">
+                <strong>HTML</strong> HTML stands for HyperText Markup Language.
+                It is the standard language used to create web pages.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" *ngIf="selectedSkill.toLowerCase().includes('css')">
+                <strong>CSS</strong> CSS stands for Cascading Style Sheets.
+                It is used to style and design web pages.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" *ngIf="selectedSkill.toLowerCase().includes('javascript')">
+                <strong>Javascript</strong> JavaScript (JS) is a programming language used to make web pages interactive
+                and dynamic.
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body" *ngIf="selectedSkill.toLowerCase().includes('angular')">
+                <strong>Angular</strong> Angular is a frontend web framework used to build dynamic and modern web
+                applications.
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { IStudent } from '../model/student';
 
 @Component({
   selector: 'app-studentcrud',
   templateUrl: './studentcrud.component.html',
-  styleUrls: ['./studentcrud.component.scss']
+  styleUrls: ['./studentcrud.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class StudentcrudComponent implements OnInit {
   isInEditMode: boolean = false
@@ -21,31 +22,31 @@ export class StudentcrudComponent implements OnInit {
 
   studentsArr: Array<IStudent> = [
     {
-      name: "Shiv",
+      name: "Shiv Pathade",
       age: "23",
       course: "BCA",
       id: "21"
     },
     {
-      name: "Rohit",
+      name: "Rohit Yewale",
       age: "23",
       course: "BBA",
       id: "22"
     },
     {
-      name: "Arjun",
+      name: "Arjun Chavan",
       age: "26",
       course: "BSc",
       id: "23"
     },
     {
-      name: "DS",
+      name: "DS Sagare",
       age: "22",
       course: "MCA",
       id: "24"
     },
     {
-      name: "Gaju",
+      name: "Gaju Kadam",
       age: "26",
       course: "BTech",
       id: "25"
@@ -99,6 +100,8 @@ export class StudentcrudComponent implements OnInit {
     let getIndex = this.studentsArr.findIndex(t => t.id === UPDATE_ID)
     this.studentsArr[getIndex] = UPDATE_OBJ
     this.studentname.nativeElement.value = ``;
+    this.studentage.nativeElement.value = ``;
+    this.studentcourse.nativeElement.value = ``;
     this.isInEditMode = false
   }
 
