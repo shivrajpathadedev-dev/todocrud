@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
 [x: string]: any;
   title = 'todocrud';
+
+  // value=20
+  // value=15
+  // value=10
+  // value=5
+  value=100
+
+  
 }

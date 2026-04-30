@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Itab } from '../model/tab-for';
+import { Itab } from '../../model/tab-for';
 
 @Component({
   selector: 'app-tab-for',

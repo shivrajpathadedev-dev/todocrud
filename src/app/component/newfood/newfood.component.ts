@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Inewfood } from '../model/newfood';
+import { Inewfood } from '../../model/newfood';
 
 @Component({
   selector: 'app-newfood',

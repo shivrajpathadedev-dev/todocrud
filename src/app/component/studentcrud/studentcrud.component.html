@@ -35,7 +35,8 @@
                     </div>
                 </table>
             </div>
-            <div class="col-md-6"> 
+            <div class="col-md-8"> 
+                <mat-card class="table-responsive">
                 <table class="table table-bordered" *ngIf="studentsArr.length>0;else noStudent">
                     <thead>
                         <tr>
@@ -72,6 +73,7 @@
                 <ng-template #noStudent>
                     <p class="alert alert-info">No Student data added yet !!!</p>
                 </ng-template>
+                </mat-card>
             </div>
         </div>
     </div>

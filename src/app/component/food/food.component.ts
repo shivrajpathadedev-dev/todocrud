@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Itab } from '../model/food';
+import { Itab } from '../../model/food';
 
 @Component({
   selector: 'app-food',

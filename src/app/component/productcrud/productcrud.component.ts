@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IProduct } from '../model/product';
+import { IProduct } from '../../model/product';
 
 @Component({
   selector: 'app-productcrud',

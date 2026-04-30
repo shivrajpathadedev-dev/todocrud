@@ -1,0 +1,42 @@
+<!-- <p>tab-switch works!</p> -->
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a href="javascript:;" [ngClass]="{
+            active:selectedFrameWork.toLowerCase().includes('angular')
+        }" class="nav-link" (click)="OnTabChange('angular')">Angular</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" [ngClass]="{
+            active:selectedFrameWork.toLowerCase().includes('node')
+        }" class="nav-link" (click)="OnTabChange('node')">Node</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" [ngClass]="{
+            active:selectedFrameWork.toLowerCase().includes('express')
+        }" class="nav-link" (click)="OnTabChange('express')">Express</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" [class.active]="selectedFrameWork==='mongo'" class="nav-link"
+            (click)="OnTabChange('mongo')">Mongo</a>
+    </li>
+</ul>
+
+<ng-container [ngSwitch]="selectedFrameWork">
+    <p *ngSwitchCase="'angular'" class="alert alert-info">
+        <strong>Angular</strong>
+        Angular is a frontend framework used to build dynamic, single-page web applications (SPA) using TypeScript.
+    </p>
+    <p *ngSwitchCase="'node'" class="alert alert-info">
+        <strong>Node</strong>
+        Node.js is a runtime environment that allows you to run JavaScript outside the browser (on the server).
+    </p>
+    <p *ngSwitchCase="'express'" class="alert alert-info">
+        <strong>Express</strong>
+        Express.js is a lightweight web framework for Node.js that makes it easy to build APIs and web servers.
+    </p>
+    <p *ngSwitchCase="'mongo'" class="alert alert-info">
+        <strong>MongoDB</strong>
+        MongoDB is a NoSQL database that stores data in JSON-like format (documents) instead of tables.
+    </p>
+</ng-container>

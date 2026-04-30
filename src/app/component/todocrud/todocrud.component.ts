@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Itodo } from '../model/todo';
+import { Itodo } from '../../model/todo';
 
 @Component({
   selector: 'app-todocrud',

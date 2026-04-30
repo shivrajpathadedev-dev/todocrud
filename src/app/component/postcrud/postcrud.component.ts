@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Ipost } from '../model/post';
+import { Ipost } from '../../model/post';
 
 @Component({
   selector: 'app-postcrud',
