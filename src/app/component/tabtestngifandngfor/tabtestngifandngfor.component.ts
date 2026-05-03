@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Itab } from '../../model/tab-for';
+import { Itab } from 'src/app/model/tab-for';
 
 @Component({
-  selector: 'app-tab-for',
-  templateUrl: './tab-for.component.html',
-  styleUrls: ['./tab-for.component.scss']
+  selector: 'app-tabtestngifandngfor',
+  templateUrl: './tabtestngifandngfor.component.html',
+  styleUrls: ['./tabtestngifandngfor.component.scss']
 })
-export class TabForComponent implements OnInit {
-  tabArrs:Array<Itab> = [
+export class TabtestngifandngforComponent implements OnInit {
+selectedSkills:string='html'
+ tabArrs:Array<Itab> = [
     {
     tabTitle: 'Angular 14',
     frameWorkName:'angular 14',
@@ -30,7 +31,6 @@ export class TabForComponent implements OnInit {
   }
 
 ]
-selectedSkills:string='node' 
   constructor() { }
 
   ngOnInit(): void {
@@ -39,5 +39,4 @@ selectedSkills:string='node'
   onTodoChange(skill:string){
     this.selectedSkills=skill
   }
-
 }

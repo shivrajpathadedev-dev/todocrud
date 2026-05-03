@@ -23,11 +23,10 @@
         active:selectedSkill.toLowerCase().includes('angular')
     }" class="nav-link" (click)="OnTabChange('angular')">Angular</a>
         </li>
-
     </ul>
 
-    <div class="tab-content mt-2">
-        <div class="card" *ngIf="selectedSkill.toLowerCase().includes('html')">
+    <div class="tab-content mt-2 alert alert-info"  >
+        <div class="card " *ngIf="selectedSkill.toLowerCase().includes('html')">
             <div class="card-body">
                 <strong>HTML</strong> HTML stands for HyperText Markup Language.
                 It is the standard language used to create web pages.

@@ -5,7 +5,7 @@
         <a href="javascript:;" [ngClass]="{
             active:selectedFrameWork.toLowerCase().includes('angular')
         }" class="nav-link" (click)="OnTabChange('angular')">Angular</a>
-    </li>
+    </li>  
     <li class="nav-item">
         <a href="javascript:;" [ngClass]="{
             active:selectedFrameWork.toLowerCase().includes('node')
@@ -24,7 +24,7 @@
 
 <ng-container [ngSwitch]="selectedFrameWork">
     <p *ngSwitchCase="'angular'" class="alert alert-info">
-        <strong>Angular</strong>
+        <strong>Angular</strong> 
         Angular is a frontend framework used to build dynamic, single-page web applications (SPA) using TypeScript.
     </p>
     <p *ngSwitchCase="'node'" class="alert alert-info">

@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Itab } from '../../model/tab-for';
+import { Itab } from 'src/app/model/tab-for';
 
 @Component({
-  selector: 'app-tab-for',
-  templateUrl: './tab-for.component.html',
-  styleUrls: ['./tab-for.component.scss']
+  selector: 'app-switchngfor',
+  templateUrl: './switchngfor.component.html',
+  styleUrls: ['./switchngfor.component.scss']
 })
-export class TabForComponent implements OnInit {
-  tabArrs:Array<Itab> = [
+export class SwitchngforComponent implements OnInit {
+selectedSkills:string='angular'
+tabArrs:Array<Itab> = [
     {
     tabTitle: 'Angular 14',
     frameWorkName:'angular 14',
@@ -30,14 +31,10 @@ export class TabForComponent implements OnInit {
   }
 
 ]
-selectedSkills:string='node' 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onTodoChange(skill:string){
-    this.selectedSkills=skill
-  }
 
 }

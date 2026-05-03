@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
-import { TabComponent } from './component/tab/tab.component';
+import { TabComponent } from './component/tab-test/tab.component';
 import { TabForComponent } from './component/tab-for/tab-for.component';
 import { FoodComponent } from './component/food/food.component';
 import { CarsComponent } from './cars/cars.component';
@@ -18,8 +18,10 @@ import { TabsComponent } from './component/tabs/tabs.component';
 import { NewfoodComponent } from './component/newfood/newfood.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { studentscrudtest } from './component/studentscrudtest/studentscrudtest.component';
-import { snackbarservice } from './component/service/snackbar.service';
 import { TabSwitchComponent } from './component/tab-switch/tab-switch.component';
+import { TabtestswitchComponent } from './component/tabtestswitch/tabtestswitch.component';
+import { TabtestngifandngforComponent } from './component/tabtestngifandngfor/tabtestngifandngfor.component';
+import { SwitchngforComponent } from './component/switchngfor/switchngfor.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,9 @@ import { TabSwitchComponent } from './component/tab-switch/tab-switch.component'
     NewfoodComponent,
     studentscrudtest,
     TabSwitchComponent,
+    TabtestswitchComponent,
+    TabtestngifandngforComponent,
+    SwitchngforComponent,
     
   ],
   imports: [
@@ -44,7 +49,7 @@ import { TabSwitchComponent } from './component/tab-switch/tab-switch.component'
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

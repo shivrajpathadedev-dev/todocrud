@@ -1,0 +1,87 @@
+
+<h2>TAb Task ngSwitch</h2>
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a href="javascript:;" (click)="OnClickAdd('angular')" 
+        [ngClass]="{
+            active:selectedSkill.toLowerCase().includes('angular')
+        }"  class="nav-link">
+            angular
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="javascript:;" (click)="OnClickAdd('array')" 
+        [ngClass]="{
+            active:selectedSkill.toLowerCase().includes('array')
+        }"
+        class="nav-link
+        "
+        >
+            Array
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="javascript:;" (click)="OnClickAdd('string')" 
+        [ngClass]="{
+            active:selectedSkill.toLowerCase().includes('string')
+        }"  class="nav-link">
+            string
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="javascript:;" (click)="OnClickAdd('number')" [ngClass]="{
+            active:selectedSkill.toLowerCase().includes('number')
+        }"  class="nav-link">
+            Number
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <a href="javascript:;" (click)="OnClickAdd('boolean')" 
+        [ngClass]="{
+            active:selectedSkill.toLowerCase().includes('boolean')
+        }"  class="nav-link">
+            Boolean
+        </a>
+    </li>
+</ul>
+
+<ng-container [ngSwitch]="selectedSkill">
+    <div class="tab-content"*ngIf="selectedSkill.toLowerCase().includes('angular')">
+<p class="alert alert-info" *ngSwitchCase="selectedSkill">
+        <strong>angular</strong>
+        Angular is a popular front-end web framework used to build dynamic, single-page applications (SPAs). It’s developed and maintained by Google and is widely used for building scalable web apps.
+    </p>
+    </div>
+
+    <div class="tab-content"*ngIf="selectedSkill.toLowerCase().includes('array')">
+<p class="alert alert-info" *ngSwitchCase="selectedSkill">
+        <strong>Array</strong>
+        An array is a data structure used to store multiple values in a single variable.
+    </p>
+    </div>
+
+    <div class="tab-content"*ngIf="selectedSkill.toLowerCase().includes('string')">
+<p class="alert alert-info" *ngSwitchCase="selectedSkill">
+        <strong>String</strong>A string is a data type used to store text (characters).
+
+    </p>
+    </div>
+
+    <div class="tab-content"*ngIf="selectedSkill.toLowerCase().includes('number')">
+<p class="alert alert-info" *ngSwitchCase="selectedSkill">
+        <strong>Number</strong>
+        A number is a data type used to store numeric values like integers and decimals.
+    </div>
+
+    <div class="tab-content"*ngIf="selectedSkill.toLowerCase().includes('boolean')">
+<p class="alert alert-info" *ngSwitchCase="selectedSkill">
+        <strong>Boolean</strong>
+       A boolean is used to represent yes/no, on/off, or true/false conditions.
+    </p>
+    </div>
+    
+</ng-container>

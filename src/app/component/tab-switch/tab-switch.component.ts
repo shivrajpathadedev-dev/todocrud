@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { skipWhile } from 'rxjs';
 
 @Component({
   selector: 'app-tab-switch',
@@ -16,5 +15,4 @@ selectedFrameWork :string ='mongo'
   OnTabChange(skill:string){
     this.selectedFrameWork=skill
   }
-
 }

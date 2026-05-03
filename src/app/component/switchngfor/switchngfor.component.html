@@ -1,0 +1,25 @@
+<div class="container mt-2">
+    <h2>Tab Task ngSwitchCase for using ngFor</h2>
+<ul class="nav nav-pills">
+    <li class="nav-item" *ngFor="let tab of tabArrs">
+   <a href="javascript:;" class="nav-link" 
+   [ngClass]="{
+    active:selectedSkills.toLowerCase().includes(tab.frameWorkName)
+   }" (click)="selectedSkills=tab.frameWorkName"
+   >{{tab.frameWorkName}}</a>
+    </li>
+</ul>
+
+</div>
+
+<ng-container [ngSwitch]="selectedSkills">
+    <div *ngFor="let tab of tabArrs">
+    <p *ngSwitchCase="tab.frameWorkName"
+     class="alert alert-info"
+    [innerHTML]="tab.tabContent"
+    >
+        <strong ></strong>
+    </p>
+    </div>
+
+</ng-container>
